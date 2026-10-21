@@ -12,7 +12,7 @@
 
 </div>
 
-本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一课、第二课和第三课 Practice 1–4。
+本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第四课的练习，涵盖神经网络基础、梯度与训练稳定性，以及 CNN、RNN 的结构与前向传播。
 
 ## 课程内容
 
@@ -58,6 +58,17 @@ Practice 3 在 `SID=42`、8 个隐藏层、每层 64 个单元的设置下，测
 
 Practice 4 在 `SID=42` 的设置下，首层梯度范数分别为：基线 `5.652e-7`、加入 BatchNorm 后 `1.119`、残差网络 `0.631`。裁剪前总梯度范数约为 `0.317`，低于阈值 `0.5`，因此保持不变；额外验证确认超出阈值时，裁剪能限制全局范数并保留梯度方向。以上均为单批次梯度测量，不代表完整训练后的性能。
 
+### 第四课 · CNN 与 RNN
+
+| 练习 | 主题 | 内容 | 入口 |
+| :--- | :--- | :--- | :---: |
+| Practice 1 | MLP 与 CNN 基础 | 图像展平、全连接网络参数量、二维 valid 卷积与展平后的像素距离 | [Notebook](fourth_class/practice1/Practice1.ipynb) |
+| Practice 2 | CNN 结构与运算 | 感受野、卷积输出尺寸与参数量、LeNet-5 逐层形状及网络维度计算 | [Notebook](fourth_class/practice2/Practice2.ipynb) · [题目配图](fourth_class/practice2/P2-Q4.png) |
+| Practice 3 | 归一化与经典网络 | NumPy 实现 BatchNorm、LayerNorm，计算 AlexNet、Inception 输出并实现残差连接 | [Notebook](fourth_class/practice3/Practice3.ipynb) |
+| Practice 4 | CNN 与 RNN 前向传播 | NumPy 实现卷积 → ReLU → 最大池化、Many-to-Many RNN 与 Many-to-One 序列二分类 | [Notebook](fourth_class/practice4/Practice4.ipynb) |
+
+第四课以 Python / NumPy 的计算与结构分析为主，无需下载数据集或预训练权重。Practice 4 已完成三题实现并通过前向传播示例验证；Notebook 保留题目和实现代码。
+
 ## 快速开始
 
 ### 1. 获取项目
@@ -67,20 +78,26 @@ git clone https://github.com/yuanfendtiankong/Ouc_DeepLearning.git
 cd Ouc_DeepLearning
 ```
 
-### 2. 安装依赖
+### 2. 创建 Conda 环境
 
-在你使用的 Python 环境中安装 Jupyter Notebook 和通用依赖：
+在 WSL/Linux 终端中进入项目根目录，使用 [environment.yml](environment.yml) 创建 Python 3.11 环境。课程依赖版本记录在 [requirements.txt](requirements.txt) 中：
 
 ```bash
-python -m pip install notebook numpy matplotlib pillow
+conda env create -f environment.yml
+conda activate deep_learning
+python -m ipykernel install --user --name deep_learning --display-name "Python (deep_learning)"
 ```
 
-另外，根据操作系统及 CPU/CUDA 环境，按照 [PyTorch 官方安装指南](https://docs.pytorch.org/get-started/locally/)安装兼容的 `torch` 和 `torchvision`。
+如果环境已经创建，后续使用前运行 `conda activate deep_learning` 即可。
 
 ### 3. 打开 Notebook
 
+在已激活的环境中启动 JupyterLab：
+
 ```bash
-jupyter notebook
+jupyter lab
 ```
 
-打开对应练习的 `.ipynb` 文件，选择已安装依赖的 Python 内核，从上到下运行。按题目要求设置 `SID`，并按照各课程 README 准备数据、设置工作目录。
+打开对应练习的 `.ipynb` 文件，选择 **Python (deep_learning)** 内核，从上到下运行。如果使用 VS Code，请在 WSL 窗口中打开项目，再选择该内核。
+
+按题目要求设置 `SID`，并按照各课程 README 准备数据、设置工作目录。Notebook 中的数据路径相对于对应练习目录。
