@@ -20,7 +20,7 @@
 运行时以对应的 `practice` 目录为工作目录。例如，在项目根目录运行：
 
 ```bash
-cd third_class/practice3
+cd Lesson3/practice3
 python -m notebook
 ```
 
@@ -39,7 +39,7 @@ Practice 1 使用 Notebook 内生成的数值，无需下载数据集。Practice
 在项目根目录、已安装 `torchvision` 的 Python 环境中运行：
 
 ```bash
-python -c "from torchvision.datasets import CIFAR10; CIFAR10(root='third_class/practice2/data', train=True, download=True)"
+python -c "from torchvision.datasets import CIFAR10; CIFAR10(root='Lesson3/practice2/data', train=True, download=True)"
 ```
 
 该命令会下载并解压数据，下载量约为 170 MB；完整缓存已存在时不会重复下载。
@@ -49,7 +49,7 @@ python -c "from torchvision.datasets import CIFAR10; CIFAR10(root='third_class/p
 从数据集官网选择 **CIFAR-10 python version**，下载 `cifar-10-python.tar.gz`，解压后将 `cifar-10-batches-py` 文件夹放到下面的位置：
 
 ```text
-third_class/practice2/data/cifar-10-batches-py/
+Lesson3/practice2/data/cifar-10-batches-py/
 ├── batches.meta
 ├── data_batch_1
 ├── data_batch_2
@@ -63,11 +63,11 @@ third_class/practice2/data/cifar-10-batches-py/
 
 | 练习 | 工作目录（相对项目根目录） | Notebook 中的 `DATA_ROOT` |
 | :--- | :--- | :--- |
-| Practice 2 | `third_class/practice2/` | `"data"` |
-| Practice 3 | `third_class/practice3/` | `"../practice2/data"` |
-| Practice 4 | `third_class/practice4/` | `"../practice2/data"` |
+| Practice 2 | `Lesson3/practice2/` | `"data"` |
+| Practice 3 | `Lesson3/practice3/` | `"../practice2/data"` |
+| Practice 4 | `Lesson3/practice4/` | `"../practice2/data"` |
 
-三个练习最终都读取 `third_class/practice2/data/` 下的数据。缓存完整时，Practice 3、4 无需再次下载；缓存目录不存在时，Notebook 会自动下载。
+三个练习最终都读取 `Lesson3/practice2/data/` 下的数据。缓存完整时，Practice 3、4 无需再次下载；缓存目录不存在时，Notebook 会自动下载。
 
 - Practice 2 使用 3,000 条训练样本，对两个网络进行训练。
 - Practice 3、4 使用一个 256 条样本的批次，仅进行前向与反向传播，不执行训练更新。

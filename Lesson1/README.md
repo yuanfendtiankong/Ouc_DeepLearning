@@ -20,7 +20,7 @@
 运行时以对应的 `practice` 目录为工作目录。例如，在项目根目录运行：
 
 ```bash
-cd first_class/practice3
+cd Lesson1/practice3
 python -m notebook
 ```
 
@@ -39,10 +39,10 @@ Practice 1、2 使用 Notebook 内构造的数据，无需额外下载数据集�
 在项目根目录、已安装 `torchvision` 的 Python 环境中运行：
 
 ```bash
-python -c "from torchvision.datasets import MNIST; MNIST(root='first_class/practice3/data', download=True)"
+python -c "from torchvision.datasets import MNIST; MNIST(root='Lesson1/practice3/data', download=True)"
 ```
 
-数据将保存在 `first_class/practice3/data/MNIST/raw/`。Notebook 使用 `root="./data"` 和 `download=False`，因此应先准备好数据，再以 `first_class/practice3/` 为工作目录运行。
+数据将保存在 `Lesson1/practice3/data/MNIST/raw/`。Notebook 使用 `root="./data"` 和 `download=False`，因此应先准备好数据，再以 `Lesson1/practice3/` 为工作目录运行。
 
 <details>
 <summary>手动下载：文件链接与目录结构</summary>
@@ -59,7 +59,7 @@ python -c "from torchvision.datasets import MNIST; MNIST(root='first_class/pract
 下载后解压四个 `.gz` 文件，确保以下不带 `.gz` 后缀的文件存在：
 
 ```text
-first_class/practice3/data/MNIST/raw/
+Lesson1/practice3/data/MNIST/raw/
 ├── train-images-idx3-ubyte
 ├── train-labels-idx1-ubyte
 ├── t10k-images-idx3-ubyte
@@ -70,7 +70,7 @@ first_class/practice3/data/MNIST/raw/
 
 ### 图片输入 · Practice 4
 
-Notebook 默认读取同目录下的 `my_photo.jpg`。使用其他图片时，将图片放入 `first_class/practice4/`，并修改 `IMG_PATH` 指向对应文件。首次加载预训练 ResNet18 权重时可能需要联网下载。
+Notebook 默认读取同目录下的 `my_photo.jpg`。使用其他图片时，将图片放入 `Lesson1/practice4/`，并修改 `IMG_PATH` 指向对应文件。首次加载预训练 ResNet18 权重时可能需要联网下载。
 
 ## 输出与路径
 

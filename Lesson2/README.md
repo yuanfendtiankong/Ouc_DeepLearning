@@ -19,7 +19,7 @@
 运行时以对应的 `practice` 目录为工作目录。例如，在项目根目录运行：
 
 ```bash
-cd second_class/practice3
+cd Lesson2/practice3
 python -m notebook
 ```
 
