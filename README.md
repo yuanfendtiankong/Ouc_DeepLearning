@@ -12,7 +12,7 @@
 
 </div>
 
-本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第五课的练习，涵盖神经网络基础、梯度与训练稳定性、CNN 和 RNN，以及数据处理、初始化、训练循环与正则化。
+本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第六课的练习，涵盖神经网络基础、梯度与训练稳定性、CNN 和 RNN、数据处理与模型训练，以及语音预处理、识别、评估和合成。
 
 ## 课程内容
 
@@ -81,6 +81,19 @@ Practice 4 在 `SID=42` 的设置下，首层梯度范数分别为：基线 `5.6
 | Practice 4 | 正则化与数据增强 | 切换数据增强，手动实现随机水平翻转 | [Notebook](Lesson5/practice4/Practice%204%20Regularization%20in%20Code.ipynb) |
 
 Practice 3 使用 3,000 张 CIFAR-10 训练图像，各训练 2 个 epoch；本次运行的测试集准确率分别为 SGD `0.3772`、Adam `0.3688`。数值会随运行环境和随机性变化。
+
+### 第六课 · 语音处理与生成
+
+四项练习的代码均已补全，并通过本地函数级数值与形状检查。
+
+| 练习 | 主题 | 内容 | 入口 |
+| :--- | :--- | :--- | :---: |
+| Practice 1 | 音频预处理 | 音频分帧、向量化预加重、汉明窗与基于短时能量的语音活动检测 | [Notebook](Lesson6/practice1/Practice1.ipynb) |
+| Practice 2 | LAS 语音识别 | pBLSTM 相邻帧拼接降采样、点积注意力、Teacher Forcing 与贪心解码 | [Notebook](Lesson6/practice2/Practice2.ipynb) |
+| Practice 3 | 音频评估 | SI-SDR、基于余弦相似度的说话人验证，以及等错误率（EER）与对应阈值计算 | [Notebook](Lesson6/practice3/Practice3.ipynb) |
+| Practice 4 | Tacotron 语音合成 | Highway 门控网络、解码停止标记与批量变长序列的有效步掩码 | [Notebook](Lesson6/practice4/Practice4.ipynb) |
+
+第六课使用 NumPy 和 PyTorch 实现语音模型中的关键计算与训练目标构造，无需额外下载数据集或预训练权重。
 
 ## 快速开始
 
