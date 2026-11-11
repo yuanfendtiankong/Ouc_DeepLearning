@@ -12,7 +12,7 @@
 
 </div>
 
-本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第六课的练习，涵盖神经网络基础、梯度与训练稳定性、CNN 和 RNN、数据处理与模型训练，以及语音预处理、识别、评估和合成。
+本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第七课的练习，涵盖神经网络基础、梯度与训练稳定性、CNN 和 RNN、数据处理与模型训练、语音处理与生成，以及文本表示、因果注意力、解码与评估。
 
 ## 课程内容
 
@@ -94,6 +94,20 @@ Practice 3 使用 3,000 张 CIFAR-10 训练图像，各训练 2 个 epoch；本�
 | Practice 4 | Tacotron 语音合成 | Highway 门控网络、解码停止标记与批量变长序列的有效步掩码 | [Notebook](Lesson6/practice4/Practice4.ipynb) |
 
 第六课使用 NumPy 和 PyTorch 实现语音模型中的关键计算与训练目标构造，无需额外下载数据集或预训练权重。
+
+### 第七课 · 文本表示、注意力与解码评估
+
+[课程说明与运行结果](Lesson7/README.md)
+
+三项练习的代码均已补全，Notebook 中保留了示例运行输出；Practice 2 已生成因果注意力热图。
+
+| 练习 | 主题 | 内容 | 入口 |
+| :--- | :--- | :--- | :---: |
+| Practice 1 | 文本与 Token Embedding | 中英文与代码分词、未知 token 映射、embedding 查表与余弦相似度 | [Notebook](Lesson7/practice1/Practice%201%20From%20Text%20to%20Token%20Embeddings.ipynb) |
+| Practice 2 | 因果注意力 | 缩放点积分数、按 key 归一化、未来位置掩码与 value 加权组合 | [Notebook](Lesson7/practice2/Practice%202%20Causal%20Attention%20by%20Hand.ipynb) · [结果图](Lesson7/practice2/attention_23.png) |
+| Practice 3 | 解码与评估 | 贪心解码、束搜索、Top-p 采样，以及无平滑的 corpus BLEU | [Notebook](Lesson7/practice3/Practice%203%20Decoding%20and%20Evaluation.ipynb) |
+
+Practice 2 的未来位置权重总和为 `0.0`，context 和注意力权重形状分别为 `(4, 2)`、`(4, 4)`。Practice 3 在固定 logits 下，贪心解码与宽度为 2 的束搜索均输出 `I like this course`；Top-p 示例输出 `I enjoy deep learning`。完全匹配译文的 BLEU 为 `1.0`，修改译文的 BLEU 约为 `0.4762`。本课使用内置示例数据，无需下载数据集或预训练权重。
 
 ## 快速开始
 
