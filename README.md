@@ -12,7 +12,7 @@
 
 </div>
 
-本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第七课的练习，涵盖神经网络基础、梯度与训练稳定性、CNN 和 RNN、数据处理与模型训练、语音处理与生成，以及文本表示、因果注意力、解码与评估。
+本仓库按课程章节整理 Notebook、示例图片和实验结果，随学习进度持续更新。目前收录第一至第八课的练习，涵盖神经网络基础、梯度与训练稳定性、CNN 和 RNN、数据处理与模型训练、语音处理与生成、文本表示、注意力、解码与评估，以及目标检测。
 
 ## 课程内容
 
@@ -108,6 +108,18 @@ Practice 3 使用 3,000 张 CIFAR-10 训练图像，各训练 2 个 epoch；本�
 | Practice 3 | 解码与评估 | 贪心解码、束搜索、Top-p 采样，以及无平滑的 corpus BLEU | [Notebook](Lesson7/practice3/Practice%203%20Decoding%20and%20Evaluation.ipynb) |
 
 Practice 2 的未来位置权重总和为 `0.0`，context 和注意力权重形状分别为 `(4, 2)`、`(4, 4)`。Practice 3 在固定 logits 下，贪心解码与宽度为 2 的束搜索均输出 `I like this course`；Top-p 示例输出 `I enjoy deep learning`。完全匹配译文的 BLEU 为 `1.0`，修改译文的 BLEU 约为 `0.4762`。本课使用内置示例数据，无需下载数据集或预训练权重。
+
+### 第八课 · 目标检测与点积注意力
+
+[课程说明与运行方式](Lesson8/README.md)
+
+三项练习共八道题，代码均已补全。练习只需 Python 和 NumPy，无需下载数据集或预训练权重。
+
+| 练习 | 主题 | 内容 | 入口 |
+| :--- | :--- | :--- | :---: |
+| Practice 1 | 滑动窗口与检测损失 | 计算候选框总数，将分类损失与加权边界框回归损失相加 | [Notebook](Lesson8/practice1/Practice1.ipynb) |
+| Practice 2 | 边界框回归与检测指标 | 批量变换候选框，计算 IoU、Precision 和 Recall | [Notebook](Lesson8/practice2/Practice2.ipynb) |
+| Practice 3 | 注意力与检测头 | 实现点积注意力，按 IoU 分配 RPN 锚框标签，按题设比较 R-CNN 和 YOLO 分类头参数量 | [Notebook](Lesson8/practice3/Practice3.ipynb) |
 
 ## 快速开始
 
